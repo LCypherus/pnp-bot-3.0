@@ -29,7 +29,16 @@ client.on('ready', () => {
         delErrMsgCooldown: 10,
         dbOptions,
         mongoUri: process.env.MONGODB,
-        testServers: ['833783765699788850']
+        testServers: ['833783765699788850'],
+        botOwners: ['453208397618085899'],
+        disabledDefaultCommands: [
+            'help',
+            'command',
+            'language',
+            'prefix',
+            'requiredrole',
+            'channelonly'
+        ],
     })
 
     wok.on('databaseConnected', async (connection, state) => {
