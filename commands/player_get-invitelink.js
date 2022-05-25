@@ -2,9 +2,8 @@ const Discord = require('discord.js');
 const commandInvitelinkSchema = require('@schemas/command-invitelink-schema')
 
 module.exports = {
-    commands: ['invitelink', 'get-invitelink'],
+    commands: ['invitelink', 'player_get-invitelink'],
     slash: 'both',  
-    testOnly: true,
     
     category: 'Player Commands',
     description: 'Receive this server\'s invite link.',
