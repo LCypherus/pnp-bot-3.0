@@ -153,7 +153,7 @@ module.exports = {
                 ]
             });
             createdChannel.send(textNewTicket);
-            createdChannel.send(newTableEmbed);
+            createdChannel.send({ embeds: [newTableEmbed] });
         } else {
             return 'There was an error in your command'
         }
