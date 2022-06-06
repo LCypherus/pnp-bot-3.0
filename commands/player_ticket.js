@@ -88,6 +88,7 @@ module.exports = {
                 ]
             });
             createdChannel.send(textMain);
+            interaction.reply({ content: `Your ticket has been made.`, ephemeral: true })
         } else if(type == "adminsOnly") {
             const createdChannel = await await guild.channels.create("AdminsOnly Ticket by " + creator, {
                 type: 'text',
@@ -108,6 +109,7 @@ module.exports = {
                 ]
             });
             createdChannel.send(textAdminsOnly);
+            interaction.reply({ content: `Your ticket has been made.`, ephemeral: true })
         } else if(type == "advertise") {
             const createdChannel = await await guild.channels.create("Advertise request by " + creator, {
                 type: 'text',
@@ -128,7 +130,8 @@ module.exports = {
                 ]
             });
             createdChannel.send(textAdvertise);
-            createdChannel.send(advertiseEmbed);
+            createdChannel.send({ embeds: [advertiseEmbed] });
+            interaction.reply({ content: `Your ticket has been made.`, ephemeral: true })
         } else if(type == "newTable") {
             const createdChannel = await guild.channels.create("Newtable Ticket by " + creator, {
                 type: 'text',
@@ -154,6 +157,7 @@ module.exports = {
             });
             createdChannel.send(textNewTicket);
             createdChannel.send({ embeds: [newTableEmbed] });
+            interaction.reply({ content: `Your ticket has been made.`, ephemeral: true })
         } else {
             return 'There was an error in your command'
         }
